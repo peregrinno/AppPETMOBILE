@@ -9,14 +9,17 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="396dp"
-        android:layout_height="209dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="175dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/logo_nft"
+        android:scaleType="centerCrop"
+        android:scaleX="2"
+        android:scaleY="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/nftlogo"
-        android:contentDescription="@string/logo_nft" />
+        app:srcCompat="@drawable/nftlogo" />
 
     <EditText
         android:id="@+id/editTextEmailAddress"
@@ -24,8 +27,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:autoText="false"
+        android:autofillHints=""
         android:editable="true"
         android:ems="12"
+        android:fontFamily="@font/alata"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
@@ -36,8 +41,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:autofillHints=""
-        tools:ignore="Deprecated" />
+        tools:ignore="Deprecated,TextContrastCheck" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -45,6 +49,7 @@
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:ems="12"
+        android:fontFamily="@font/alata"
         android:hint="@string/senha"
         android:inputType="numberPassword"
         android:minHeight="48dp"
@@ -53,13 +58,16 @@
         app:layout_constraintBottom_toTopOf="@+id/btnUserLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btnUserLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="acessar"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/alata"
+        android:onClick="Acessar"
         android:text="@string/acessar"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,15 +80,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:fontFamily="sans-serif-condensed"
+        android:fontFamily="@font/alata"
         android:text="@string/sua_carteira_de_tokens_e_nft"
         android:textAlignment="center"
         android:textColor="#FFC107"
         android:textDirection="inherit"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView3"
