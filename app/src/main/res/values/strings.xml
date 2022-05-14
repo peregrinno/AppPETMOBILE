@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MyAppHelloWorld</string>
+    <string name="sua_carteira_de_tokens_e_nft">Sua carteira de tokens e NFT!</string>
+    <string name="acessar">Acessar</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="_2022_furadeira_labs">2022 | Furadeira Labs</string>
+    <string name="logo_nft">Logo nft</string>
 </resources>

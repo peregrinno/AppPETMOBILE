@@ -19,7 +19,7 @@
         android:contentDescription="@string/logo_nft" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/editTextEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
@@ -31,7 +31,7 @@
         android:minHeight="48dp"
         android:textColor="#F44336"
         android:textColorHint="#FFCDD2"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,32 +40,32 @@
         tools:ignore="Deprecated" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/editTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="12"
         android:hint="@string/senha"
-        android:inputType="textPassword"
+        android:inputType="numberPassword"
         android:minHeight="48dp"
         android:textColor="#F44336"
         android:textColorHint="#FFCDD2"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnUserLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnUserLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="acessar"
         android:text="@string/acessar"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <TextView
         android:id="@+id/textView2"
@@ -75,7 +75,7 @@
         android:fontFamily="sans-serif-condensed"
         android:text="@string/sua_carteira_de_tokens_e_nft"
         android:textAlignment="center"
-        android:textColor="#4A148C"
+        android:textColor="#FFC107"
         android:textDirection="inherit"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
