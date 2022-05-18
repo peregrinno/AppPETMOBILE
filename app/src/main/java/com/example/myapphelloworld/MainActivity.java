@@ -3,10 +3,16 @@ package com.example.myapphelloworld;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.app.AlertDialog;
+import android.app.Activity;
+import android.content.Intent;
+import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,32 +24,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, Channel 1)
-                .setSmallIcon(R.drawable.notification_icon)
-                .setContentTitle(textTitle)
-                .setContentText(textContent)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-        */
-
         editTextEmailAddress = findViewById(R.id.editTextEmailAddress);
         editTextPassword = findViewById(R.id.editTextPassword);
     }
 
-    public void acessar(View view) {
+    private void MensagemInformativa (String mensagem){
+        new AlertDialog.Builder(this)
+                .setTitle("Algo errado...")
+                .setMessage(mensagem)
+                .setPositiveButton("OK", null)
+                .setCancelable(false)
+                .show();
+    }
 
-        //Cria novo objeto da classe usuario
-        Usuario user = new Usuario("joseluan74@gmail.com", 123456);
+    public void Login(View view){
+        Button button = findViewById(R.id.btnUserLogin);
+        Usuario user = new Usuario();
+        user.setEmail(editTextEmailAddress.getText().toString());
+        user.setPassword(editTextPassword.getText().toString());
 
-        String inputViewEmail = editTextEmailAddress.getText().toString();
-        int inputViewSenha = Integer.parseInt(editTextPassword.getText().toString());
-
-        if (inputViewEmail == user.getEmail() && inputViewSenha == user.getPassword()){
-            System.out.println("Acesso liberado para: ");
-            System.out.println(user.getEmail() + user.getPassword());
+        if (user.ValidaUsuario() == false){
+            MensagemInformativa("Email ou senha inválidos, tente novamente.");
         } else {
-            System.out.print("Credencias invalidas");
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(MainActivity.this, LoginCarteiraActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
     }
+
 }
